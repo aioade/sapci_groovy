@@ -13,3 +13,10 @@ Also the message format can be set so you will get a pretty print of your conten
 `messageLog.addAttachmentAsString("SAP Response", body, "application/xml");`
 
 First parameter here is the **title**, last one the file format (similar to Content-Type header values): **application/xml**.
+
+
+## Add / Delete JSON Object
+Sometimes you have the case that you have a big JSON message in the payload but only want to change one field.
+In this case creating a message mapping with input / output structure can be a litte over-engineered :) Also changing it by string replace will not always do the job if you have content with same keys or values.
+
+So here is a simple solution to parse the String body as JSON object and you have one example how to delete an object in the JSON payload or add a new one with an easy one-liner.
