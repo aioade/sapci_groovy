@@ -20,3 +20,12 @@ Sometimes you have the case that you have a big JSON message in the payload but 
 In this case creating a message mapping with input / output structure can be a litte over-engineered :) Also changing it by string replace will not always do the job if you have content with same keys or values.
 
 So here is a simple solution to parse the String body as JSON object and you have one example how to delete an object in the JSON payload or add a new one with an easy one-liner.
+
+
+## Refactor OData Arrays
+This is working general on all arrays inside a JSON payload, but I needed this solution especially regarding OData in SF.
+There are cases like Picklist, where you have for example multiple labels depending on the languagues available. Making filtering in the mapping for one value can cause problems, that the other values of the array get shifted to the next object and the payload content gets invalid.
+So this function is harmonizing the payload by refactoring and releasing arrays into a simple JSON object with the current first object and his values.
+This way the mapping condition is always unique and small and especially big payloads are working correct.
+
+As input besides the payload, you can give a list of comma-separated json array objects, where you want to use the refactoring.
