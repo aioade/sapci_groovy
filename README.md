@@ -29,3 +29,6 @@ So this function is harmonizing the payload by refactoring and releasing arrays 
 This way the mapping condition is always unique and small and especially big payloads are working correct.
 
 As input besides the payload, you can give a list of comma-separated json array objects, where you want to use the refactoring.
+
+## Calendar details
+A small helper for message mappings, if you need to get more details for a date object. It offers the calculation of the actual calendar week or calendar quarter of a specific date. As input parameter you need to give the date for calculation (format YYYY-MM-dd) and the type of response, so 'week' or 'quarter'.
